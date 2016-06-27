@@ -5,10 +5,16 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives','ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($rootScope,$ionicPlatform) {
+  $rootScope.appReady = {status:false};
   $ionicPlatform.ready(function() {
+    console.log('ionic Ready');
+    $rootScope.appReady.status = true;
+    $rootScope.$apply();
+
+    console.log('in app.js, appReady is '+$rootScope.appReady.status);
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {

@@ -3,9 +3,9 @@
   "version": "1.1.1",
   "description": "adcreator: An Ionic project",
   "dependencies": {
-    "express":"*",
-    "body-parser":"*",
-    "mongoose":"*"
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*",
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
     "gulp-concat": "^2.2.0",
@@ -23,6 +23,7 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
+    "cordova-plugin-inappbrowser",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
