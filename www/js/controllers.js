@@ -4,55 +4,32 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('imageCtrl', ['$scope', '$rootScope', '$cordovaCamera', function($scope, $rootScope, $cordovaCamera,$ionicActionSheet)  {
-  $scope.showActionsheet = function() {
-
-    $ionicActionSheet.show({
-      titleText: 'ActionSheet Example',
-      buttons: [
-        { text: '<i class="icon ion-share"></i> Share' },
-        { text: '<i class="icon ion-arrow-move"></i> Move' },
-      ],
-      destructiveText: 'Delete',
-      cancelText: 'Cancel',
-      cancel: function() {
-        console.log('CANCELLED');
-      },
-      buttonClicked: function(index) {
-        console.log('BUTTON CLICKED', index);
-        return true;
-      },
-      destructiveButtonClicked: function() {
-        console.log('DESTRUCT');
-        return true;
-      }
-    });
-  };
+.controller('imageCtrl',['$scope', '$rootScope', '$cordovaCamera', function($scope, $rootScope, $cordovaCamera) {
   $scope.ready = false;
-	$scope.images = [];
- $scope.buttonDisable = false;
-	$rootScope.$watch('appReady.status', function() {
-		console.log('watch fired '+$rootScope.appReady.status);
-		if($rootScope.appReady.status) $scope.ready = true;
-	});
+  $scope.images = [];
 
-	$scope.selImages = function() {
-    $scope.buttonDisable = true;
-		window.imagePicker.getPictures(
-			function(results) {
-      for (var i = 0; i < results.length; i++) {
-					console.log('Image URI: ' + results[0]);
-					$scope.images.push(results[0]);
+  $rootScope.$watch('appReady.status', function() {
+    console.log('watch fired '+$rootScope.appReady.status);
+    if($rootScope.appReady.status) $scope.ready = true;
+  });
+
+  $scope.selImages = function() {
+
+    window.imagePicker.getPictures(
+      function(results) {
+        for (var i = 0; i < results.length; i++) {
+          console.log('Image URI: ' + results[i]);
+          $scope.images.push(results[i]);
         }
-				if(!$scope.$$phase) {
-					$scope.$apply();
-				}
-			}, function (error) {
-				console.log('Error: ' + error);
-			}
-		);
+        if(!$scope.$$phase) {
+          $scope.$apply();
+        }
+      }, function (error) {
+        console.log('Error: ' + error);
+      }
+    );
 
-	};
+  };
 }])
 
 .controller('videoCtrl', function($scope) {

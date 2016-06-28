@@ -2,12 +2,8 @@
     <ion-content padding="true" class="has-header">
         <div id="image-button-bar2" class=" button-bar "></div>
         <div id="image-button-bar4" class=" button-bar "></div>
-        <button class="button" ng-click="showActionsheet()">
-                Show Actionsheet
-              </button>
-
         <button class="button button-block button-balanced" ng-click="selImages()" ng-disabled="{{buttonDisable}}">
-          Select Images
+          Select Image
         </button>
         <p ng-repeat="img in images">
           <img ng-src="{{img}}" style="max-width:400px;max-height:350px" />
