@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('app.routes',[])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -7,8 +7,8 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
+
+
 
       .state('text', {
     url: '/page2',
@@ -77,7 +77,4 @@ angular.module('app.routes', [])
   })
 
 $urlRouterProvider.otherwise('/page5')
-
-  
-
 });

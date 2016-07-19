@@ -1,10 +1,11 @@
 <ion-view title="Image " id="page9" class=" ">
-    <ion-content padding="true" style="background: url(img/Dyg7QrZ8QNeAwYgWz1Fg_recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg) no-repeat center;background-size:cover;" class="has-header">
-        <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
-        <div class="spacer" style="width: 300px; height: 49px;"></div>
-        <p id="image2-markdown2" style="color:#1F2DCA;" class=" ">Place a button to link to your website</p>
+    <ion-content padding="true"  class="has-header">
+      <p ng-repeat="img1 in images">
+        <img ng-src="{{img1}}" style="max-width:400px;max-height:350px" />
+          <ion-item>{{caption}}</ion-item>
+      </p>
+
+        <p id="image2-markdown2"  class=" ">Place a button to link to your website</p>
         <button id="image2-button31" class=" button button-royal  button-block ">Link to website</button>
         <a ui-sref="preview" id="image2-button42" class=" button button-assertive  button-outline ">Next</a>
     </ion-content>

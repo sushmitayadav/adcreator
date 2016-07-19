@@ -1,18 +1,21 @@
-<ion-view title="Image" id="page3" style="background-color:#48454B;" class=" ">
+<ion-view title="Image" id="page3" class=" ">
     <ion-content padding="true" class="has-header">
         <div id="image-button-bar2" class=" button-bar "></div>
         <div id="image-button-bar4" class=" button-bar "></div>
         <button class="button button-block button-balanced" ng-click="selImages()" ng-disabled="{{buttonDisable}}">
           Select Image
         </button>
-        <p ng-repeat="img in images">
+            <p ng-repeat="img in images">
           <img ng-src="{{img}}" style="max-width:400px;max-height:350px" />
         </p>
-        <button id="image-button29" class=" button button-dark  ">Icons</button>
-        <button id="image-button25" style="font-weight:300;border-radius:5px 5px 5px 5px;" class=" button button-dark  ">Template</button>
-        <button id="image-button30" class=" button button-dark  ">Border</button>
-        <a ui-sref="adSize" id="image-button23" class=" button button-dark  ">Ad Size</a>
-        <button id="image-button36" class=" button button-dark  ">Text</button>
-        <a ui-sref="image2" id="image-button32" class=" button button-assertive  button-outline ">Next</a>
+        <!--<ion-item>
+              <ion-label fixed ng-model="caption">Caption</ion-label>
+             <input type="text" ng-model="caption">
+      </ion-item>-->
+  <ion-item>
+  <input  type="text" ng-model="caption"  />
+</ion-item>
+
+    <a ui-sref="image2" id="image-button32" class=" button button-assertive  button-outline "  ng-click="retcap">Next</a>
     </ion-content>
 </ion-view>
